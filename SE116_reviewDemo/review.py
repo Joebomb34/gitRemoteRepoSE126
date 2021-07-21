@@ -23,12 +23,12 @@
 temp_count = 0
 total_temp = 0
 
-#answer = "y"
+answer = "y"
 
-total = int(input("\n\t\tHow many temperatures would you like to check today?: "))
+#total = int(input("\n\t\tHow many temperatures would you like to check today?: "))
 
 
-while temp_count < total:
+while answer == "y" or answer == "Y":
 
     tempF = float(input("\t\tEnter temperature in Farenheit: "))
 
@@ -39,7 +39,14 @@ while temp_count < total:
 
     print("\tTemp# {0}\tTemp {1:.1f}F = Temp {2:.1f}C\n".format(temp_count, tempF, tempC))
 
-    #answer = input("\t\tWould you like to enter another temperature? [y/n]: ")
+    answer = input("\t\tWould you like to enter another temperature? [y/n]: ").lower()
+
+    while answer != "y" and answer != "n":
+
+        print("***INVALID OPTION***")
+
+        answer = input("\t\tWould you like to enter another temperature? [y/n]: ").lower()
+
 
 avg_tempF = total_temp / temp_count
 
