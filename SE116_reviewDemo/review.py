@@ -1,5 +1,6 @@
 #Joe Bombassei
 #SE116 Review
+#7/20/21
 
 #Program Prompt: This is a temperature converter program, it allows user to enter as many Farenheit temperatures as the user wants and shows the Celcius conversion for each. It also counts the number of temeratures entered, and determines average of all temps.
 
@@ -22,9 +23,12 @@
 temp_count = 0
 total_temp = 0
 
-answer = "y"
+#answer = "y"
 
-while answer== "y":
+total = int(input("\n\t\tHow many temperatures would you like to check today?: "))
+
+
+while temp_count < total:
 
     tempF = float(input("\t\tEnter temperature in Farenheit: "))
 
@@ -35,7 +39,7 @@ while answer== "y":
 
     print("\tTemp# {0}\tTemp {1:.1f}F = Temp {2:.1f}C\n".format(temp_count, tempF, tempC))
 
-    answer = input("\t\tWould you like to enter another temperature? [y/n]: ")
+    #answer = input("\t\tWould you like to enter another temperature? [y/n]: ")
 
 avg_tempF = total_temp / temp_count
 
