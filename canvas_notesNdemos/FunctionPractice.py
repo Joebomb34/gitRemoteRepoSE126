@@ -10,6 +10,12 @@ def multi(x,y):
 
     return product
 
+def user_hours():
+
+    h = float(input("Enter your hours worked: "))
+
+    return h
+
 #BASE PROGRAM CODE-------------------------------------------------------------------
 
 tax = .28
@@ -21,10 +27,12 @@ answer = "y"
 while answer == "y" or answer == "Y":
 
     hrly_rate = float(input("\nEnter your hourly rate: "))
-    hours = float(input("\nEnter your hours worked: "))
-
+    #hours = float(input("\nEnter your hours worked: "))
+    hours = user_hours()
+    
     #calculate gross pay; all other values are dependent on it
-    gross = hrly_rate * hours
+    #gross = hrly_rate * hours
+    gross = multi(hrly_rate, hours)
 
     #updates total_gross & total_employees
     total_gross += gross
@@ -32,12 +40,14 @@ while answer == "y" or answer == "Y":
 
     #calculate tax_amount this pay period
     tax_amount = gross * tax
+    tax_amount = multi(gross, tax)
 
     #calculate net pay
     net = gross - tax_amount
 
     #print to user
     print("\nEMPLOYEE #{0} \tGROSS ${1:.2f} \tTAXES ${2:.2f} \tNET ${3:.2f}".format(total_employees, gross, tax_amount, net))
+
 
     answer = input("\nWould you like to enter another employee? [y/n]: ")
    
