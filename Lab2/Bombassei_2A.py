@@ -26,18 +26,22 @@ rooms_over = 0
 print("\t\tROOM\t\t MAX\tPEOPLE\tREMOVE")
 print("\t-------------------------------------------------")
 
+#open the file
 with open("Lab2/lab2a.csv") as csvfile:
 
+    #read the file
     file = csv.reader(csvfile)
 
     for rec in file:
 
         total_rooms += 1
 
+        #store each record as a variable to be easily accessed later
         room = rec[0]
         capacity = int(rec[1])
         people = int(rec[2])
 
+        #if statment for the rooms that are over capacity
         if int(rec[2]) > int(rec[1]):
 
             rooms_over += 1
