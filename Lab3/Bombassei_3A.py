@@ -26,6 +26,7 @@
 badD = 0
 badL = 0
 total_computers = 0
+#start list
 c_type = []
 brand = []
 cpu = []
@@ -45,6 +46,7 @@ with open("Lab3/lab3a.csv") as csvfile:
     for rec in file:
         total_computers += 1
 
+        #append list so file can close
         c_type.append(rec[0])
         brand.append(rec[1])
         cpu.append(rec[2])
@@ -63,6 +65,8 @@ with open("Lab3/lab3a.csv") as csvfile:
             yr.append(int(rec[8]))
 
 print("\nRecords Processed: {0}".format(total_computers))
+
+#Logic for the price the computers will be if all bad ones were to be replaced
 
 for i in range(0, total_computers):
     if yr[i] <= 16 and c_type[i] == "D":
