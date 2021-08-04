@@ -42,3 +42,48 @@ for i in range(0, len(age)): #len()returns number of items
 average_age = total_age / records
 
 print("\n\tAverage Age: {0:.2f}".format(average_age))
+
+#process the lists to count/ tally favorite animals
+
+crow = 0
+elephant = 0
+dog = 0
+dolphin = 0
+monkey = 0
+lion = 0
+wolf = 0
+
+for i in range(0, records):
+
+    if animal[i] == "crow":
+        crow += 1
+
+    elif animal[i] == "elephant":
+        elephant += 1
+
+    elif animal[i] == "dog":
+        dog += 1
+
+    elif animal[i] == "dolphin":
+        dolphin += 1
+
+    elif animal[i] == "monkey":
+        monkey += 1
+
+    elif animal[i] == "lion":
+        lion += 1
+
+    elif animal[i] == "wolf":
+        wolf += 1
+
+    else:
+        print("**ERROR** unexpected animal found in record: ", i)
+
+print("\n\tFAVORITE ANIMAL TALLIES: ")
+print("\t\tDOG: ", dog)
+print("\t\tCROW: ", crow)
+print("\t\tELEPHANT: ", elephant)
+print("\t\tDOLPHIN: ", dolphin)
+print("\t\tWOLF: ", wolf)
+print("\t\tLION: ", lion)
+print("\t\tMONKEY: ", monkey)
