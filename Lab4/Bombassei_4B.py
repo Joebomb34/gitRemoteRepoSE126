@@ -6,6 +6,20 @@
 #PROGRAM PROMPT: Build a program that users select from a menu what they want to see from the imported txt file.
 
 #VARIABLE DICTIONARY:
+#menu() - fuction call for the main menu
+#goodbye() - function call for the goodbye message
+#choice - users input for what they want displayed
+#records - number count of records processed
+#fname - first name in the list
+#lname - last name in the list
+#age - charectors age in the list
+#nickname - charectors nicknames in the list
+#allegiance - charectors house allegiance in the list
+#motto_list - motto list
+#answer - used to enter while loop
+#csvfile - imported file
+#file - imported csvfile after reader
+
 
 #FUNCTIONS
 def menu():
@@ -80,7 +94,7 @@ with open("Lab4/lab4A_GOT_NEW.txt") as csvfile:
 
 answer = "y"
 
-while answer == "y":
+while answer == "y".lower():
     choice = menu()
 
     if choice == "1":
@@ -115,10 +129,10 @@ while answer == "y":
 
     #option to re-enter loop; opportunity to revalue the loop condition key (answer)
     if choice != "4":#this gives people who choose EXIT are not asked if they would like to return to the loop
-        answer = input("\t\tWould you like to re-enter the loop? [y/n]: ")
+        answer = input("\t\tWould you like to re-enter the loop? [y/n]: ").lower()
 
         while answer != "n" and answer != "y":
-            answer = input("Would you like to re-enter the loop?[y/n]: ")
+            answer = input("Would you like to re-enter the loop?[y/n]: ").lower()
             answer = answer.lower()
 
 goodbye()
