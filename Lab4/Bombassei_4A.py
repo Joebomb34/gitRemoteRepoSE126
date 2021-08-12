@@ -6,6 +6,23 @@
 #Program Prompt: Process the text file to a list, and reprocess the file to print the House motto, print each house fully with motto, total number of people in the list, average age, and tallies for each alliance.
 
 #Variable Dictionary:
+#records - number of records processed
+#age_total - total of added ages
+#house_stark - number of tallies for
+#nights_watch - number of tallies for
+#house_tully - number of tallies for
+#house_lannister - number of tallies for
+#house_baratheon - number of tallies for
+#house_taragaryen - number of tallies for
+#fname - first name in the list
+#lname - last name in list
+#age - age in the list
+#nickname - nickname in the list
+#allegiance - allegiance in the list
+#motto_list - house motto list
+#csvfile - lab4 txt file
+#file - csvfile after reader
+#average - average age of all charectors in record
 
 #Main Code------
 
@@ -27,7 +44,6 @@ nickname = []
 allegiance = []
 motto_list = []
 
-avgage = []
 
 with open("Lab4/lab4A_GOT_NEW.txt") as csvfile:
 
