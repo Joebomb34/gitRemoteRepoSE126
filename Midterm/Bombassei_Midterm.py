@@ -22,6 +22,8 @@
 #user - input user gives when presented with the menu function
 #drink - elgability to drink based on file
 #drank - based on being 21 or older
+#income_total - total income accross the file
+#average - average income based on the file
 
 #Function---
 def menu():
