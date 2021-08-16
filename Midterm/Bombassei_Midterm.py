@@ -21,17 +21,18 @@ def menu():
     print("1. Print Full Record")
     print("2. Print Last name, Elgibility to rent a car")
     print("3. Print Last name and if person would need a cosigner on a lease based on minimum $60,000 for no co-signer")
-    print("4. EXIT")
+    print("4. Print the number of records in the file")
+    print("5. EXIT")
 
     #gete user's choice
-    user = input("\tEnter your menu selection [1-4]: ")
+    user = input("\tEnter your menu selection [1-5]: ")
 
     #make sure user gives you a valid value
-    while user != "1" and user != "2" and user != "3" and user != "4":
+    while user != "1" and user != "2" and user != "3" and user != "4" and user != "5":
 
         #ERROR TRAP LOOP!
         print("\t\t***ERROR ERROR***")
-        user = input("\tEnter your menu selection [1-4]: ")
+        user = input("\tEnter your menu selection [1-5]: ")
 
     return user
 
@@ -112,11 +113,19 @@ while answer == "y".lower():
             print("{0:10}\t${1:6}\t\t{2:5}".format(lname[i], income[i], cosign_list[i]))
 
     elif user == "4":
+        print("-----------------")
+        print("NUMBER OF RECORDS")
+        print("-----------------")
+
+        print("{0:3}".format(records))
+        
+
+    elif user == "5":
         print("\t\tE X I T I N G . . .")
         answer = "x"
 
 
-    if user != "4":#this gives people who choose EXIT are not asked if they would like to return to the loop
+    if user != "5":#this gives people who choose EXIT are not asked if they would like to return to the loop
         answer = input("\t\tWould you like to re-enter the loop? [y/n]: ").lower()
 
         while answer != "n" and answer != "y":
