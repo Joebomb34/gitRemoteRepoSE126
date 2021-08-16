@@ -13,6 +13,15 @@
 #residence - town which person live
 #csvfile - midterm.txt
 #file - csvfile after reader
+#income - yearly income
+#rent_car - rent car list
+#cosign_list - based on needing $60K to not need a cosign
+#rent - yes or no to rent a car based on persons age
+#cosigner - yes or no based on list
+#answer - true statment to get into loop
+#user - input user gives when presented with the menu function
+#drink - elgability to drink based on file
+#drank - based on being 21 or older
 
 #Function---
 def menu():
@@ -22,21 +31,23 @@ def menu():
     print("2. Print Last name, Elgibility to rent a car")
     print("3. Print Last name and if person would need a cosigner on a lease based on minimum $60,000 for no co-signer")
     print("4. Print the number of records in the file")
-    print("5. EXIT")
+    print("5. Print Last Name, Elgability of Drinking")
+    print("6. Print average income of the file")
+    print("7. EXIT")
 
     #gete user's choice
-    user = input("\tEnter your menu selection [1-5]: ")
+    user = input("\tEnter your menu selection [1-7]: ")
 
     #make sure user gives you a valid value
-    while user != "1" and user != "2" and user != "3" and user != "4" and user != "5":
+    while user != "1" and user != "2" and user != "3" and user != "4" and user != "5" and user != "6" and user != "7":
 
         #ERROR TRAP LOOP!
         print("\t\t***ERROR ERROR***")
-        user = input("\tEnter your menu selection [1-5]: ")
+        user = input("\tEnter your menu selection [1-7]: ")
 
     return user
 
-def goodbye():
+def deuces():
     '''Goodbye message'''
     print("Thanks for using my program, Have a nice day!")
 
@@ -45,6 +56,7 @@ def goodbye():
 import csv
 
 records = 0
+income_total = 0
 
 fname = []
 lname = []
@@ -53,7 +65,7 @@ residence = []
 income = []
 rent_car = []
 cosign_list = []
-
+drank = []
 
 with open("Midterm/midterm.txt") as csvfile:
     file = csv.reader(csvfile)
@@ -83,6 +95,15 @@ with open("Midterm/midterm.txt") as csvfile:
 
         cosign_list.append(cosigner)
 
+        if rec[2] >= "21":
+            drink = "YES"
+
+        if rec[2] < "21":
+            drink = "NO"
+
+        drank.append(drink)
+
+
 answer = "y"
 
 while answer == "y".lower():
@@ -98,19 +119,19 @@ while answer == "y".lower():
 
     elif user == "2":
         print("-----------------------------------------")
-        print("{0:10}\t{1:5}".format("LAST NAME", "CAR RENTAL"))
+        print("{0:10}\t{1:3}\t{2:5}".format("LAST NAME", "AGE", "CAR RENTAL"))
         print("-----------------------------------------")
 
         for i in range(0, records):
-            print("{0:10}\t{1:5}".format(lname[i], rent_car[i]))
+            print("{0:10}\t{1:3}\t{2:5}".format(lname[i], age[i], rent_car[i]))
 
     elif user == "3":
         print("------------------------------------------")
-        print("{0:10}\t{1:6}\t\t{2:5}".format("LAST NAME", "INCOME", "CO-SIGNER"))
+        print("{0:10}\t{1:7}\t\t{2:5}".format("LAST NAME", "INCOME", "CO-SIGNER"))
         print("------------------------------------------")
 
         for i in range(0, records):
-            print("{0:10}\t${1:6}\t\t{2:5}".format(lname[i], income[i], cosign_list[i]))
+            print("{0:10}\t${1:7}\t{2:5}".format(lname[i], income[i], cosign_list[i]))
 
     elif user == "4":
         print("-----------------")
@@ -118,19 +139,39 @@ while answer == "y".lower():
         print("-----------------")
 
         print("{0:3}".format(records))
-        
 
     elif user == "5":
+        print("------------------------------------------------------------------")
+        print("{0:10}\t   {1:6}{2:5}".format("LAST NAME", "AGE", "Drinking Elgability"))
+        print("------------------------------------------------------------------")
+
+        for i in range(0, records):
+            print("{0:10}\t{1:6}\t\t{2:5}".format(lname[i], age[i], drank[i]))
+
+    elif user == "6":
+        print("------------------------")
+        print("{0:7}".format("AVERAGE INCOME"))
+        print("------------------------")
+
+        for i in range(0, records):
+            income_total += income[i]
+
+        average = income_total / records
+
+        print("${0:7.2f}".format(average))
+        
+
+    elif user == "7":
         print("\t\tE X I T I N G . . .")
         answer = "x"
 
 
-    if user != "5":#this gives people who choose EXIT are not asked if they would like to return to the loop
-        answer = input("\t\tWould you like to re-enter the loop? [y/n]: ").lower()
+    if user != "7":#this gives people who choose EXIT are not asked if they would like to return to the loop
+        answer = input("\t\tWould you like to see the menu again? [y/n]: ").lower()
 
         while answer != "n" and answer != "y":
-            answer = input("Would you like to re-enter the loop?[y/n]: ").lower()
+            answer = input("Would you like to se the menu again?[y/n]: ").lower()
             answer = answer.lower()
 
 
-goodbye()
+deuces()

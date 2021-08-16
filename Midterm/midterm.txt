@@ -10,3 +10,6 @@ Todd,Hunt,24,North Kingstown,50000
 Caitlin,Ski,24,Newport,95000
 Casey,Walsh,25,Middletown,85000
 Catherine,Graves,25,Coventry,67000
+Benjamin,Bucholz,19,Tiverton,30000
+Richard,Sherman,13,Cumberland,12
+Ryan,Richards,45,East Providence,120000
