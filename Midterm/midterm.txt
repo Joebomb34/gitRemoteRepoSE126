@@ -1,0 +1,12 @@
+Joe,Bombassei,25,Cranston,60000
+Kelly,Stud,26,Warwick,20000
+Roger,Federar,28,Providence,40000
+Ronald,Macdonald,20,Exeter,54000
+Nathaniel,Farrar,29,Narragansett,32000
+Victor,Granados,24,West Warwick,90000
+Billy,Hon,23,Smithfield,70000
+Jalen,Torres,23,North Smithfield,80000
+Todd,Hunt,24,North Kingstown,50000
+Caitlin,Ski,24,Newport,95000
+Casey,Walsh,25,Middletown,85000
+Catherine,Graves,25,Coventry,67000
