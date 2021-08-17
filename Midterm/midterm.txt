@@ -1,15 +1,15 @@
-Joe,Bombassei,25,Cranston,60000
-Kelly,Stud,26,Warwick,20000
-Roger,Federar,28,Providence,40000
-Ronald,Macdonald,20,Exeter,54000
-Nathaniel,Farrar,29,Narragansett,32000
-Victor,Granados,24,West Warwick,90000
-Billy,Hon,23,Smithfield,70000
-Jalen,Torres,23,North Smithfield,80000
-Todd,Hunt,24,North Kingstown,50000
-Caitlin,Ski,24,Newport,95000
-Casey,Walsh,25,Middletown,85000
-Catherine,Graves,25,Coventry,67000
-Benjamin,Bucholz,19,Tiverton,30000
-Richard,Sherman,13,Cumberland,12
-Ryan,Richards,45,East Providence,120000
+Joe,Bombassei,25,Cranston,60000,1996
+Kelly,Stud,26,Warwick,20000,1995
+Roger,Federar,28,Providence,40000,1993
+Ronald,Macdonald,20,Exeter,54000,2001
+Nathaniel,Farrar,29,Narragansett,32000,1992
+Victor,Granados,24,West Warwick,90000,1997
+Billy,Hon,23,Smithfield,70000,1998
+Jalen,Torres,23,North Smithfield,80000,1998
+Todd,Hunt,24,North Kingstown,50000,1997
+Caitlin,Ski,24,Newport,95000,1997
+Casey,Walsh,25,Middletown,85000,1996
+Catherine,Graves,25,Coventry,67000,1996
+Benjamin,Bucholz,19,Tiverton,30000,2002
+Richard,Sherman,13,Cumberland,12,2008
+Ryan,Richards,45,East Providence,120000,1976
