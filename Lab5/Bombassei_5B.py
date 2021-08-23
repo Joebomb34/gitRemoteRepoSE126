@@ -1,9 +1,9 @@
 #Joe Bombassei
 #SE126.02
-#Lab 5A
+#Lab 5B
 #8/23/21
 
-#Program Prompt: Store data to a list, prompt the user to enter the full lastname of the person they are searching for, and print the number of records the program went through before finding or not finding the file, reset the search count before entering the loop again, if the search was not found display that, if person was found display the full record of that person.
+#Program Prompt: Store data to a list, prompt the user to enter the full birthday of the person they are searching for, and print the number of records the program went through before finding or not finding the file, reset the search count before entering the loop again, if the search was not found display that, if person was found display the full record of that person.
 
 #Variable Dictionary:
 #lname - list lastname
