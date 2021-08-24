@@ -24,6 +24,11 @@ import csv
 lname = []
 fname = []
 birth = []
+age = []
+tm = 8
+td = 28
+ty = 2021
+
 
 records = 0
 search_count = 0
@@ -46,6 +51,27 @@ for i in range(0, records):
 
 print("\n\n\n")
 
+for i in range(0, records):
+    birth_L = birth[i].split("/")
+    month = int(birth_L[0])
+    day = int(birth_L[1])
+    year = int(birth_L[2])
+    
+    if month > tm:
+        age_ = ty - year - 1
+        age.append(age_)
+
+    elif month < tm:
+        age_ = ty - year + 1
+
+        age.append(age_)
+
+    else:
+        if day > td:
+            age = ty
+        age.append(age_)
+
+
 answer = "y"
 
 while answer == "y" or answer == "Y":
@@ -65,12 +91,12 @@ while answer == "y" or answer == "Y":
     if found >= 0:
 
         print("We have found who you are looking for {0}, at index number {1}".format(search, found))
-        print("INDEX: {0}\t{1:10}\t{2:10}\t{3:12}".format(found, lname[found], fname[found], birth[found]))
+        print("\nINDEX: {0}\t{1:10}\t{2:10}\t{3:12}\t{4:3}".format(found, lname[found], fname[found], birth[found], age[found]))
 
     else:
         print("\n\tYour search for {0} was NOT FOUND.".format(search))
 
-    print("SEARCH COUNT: {0}".format(search_count))
+    print("\nSEARCH COUNT: {0}".format(search_count))
 
     search_count = 0
 
