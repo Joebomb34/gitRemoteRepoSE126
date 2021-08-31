@@ -50,61 +50,31 @@ for i in range(0, records):
 print("\n\n\n")
 
 answer = "y"
-
-while answer == "y" or answer == "Y":
-
-    found = -1
+while (min < max and search != lname[guess]):
 
     search = input("Enter the full last name of the person you are looking for: ")
-
-    for i in range(0, records):
-        #search_count += 1
-
-        if search == lname[i]:
-            found = i
-
-    print("\t\tSEARCH HAS COMPLETED.\n\n")
-
-    if found >= 0:
-
-        print("We have found who you are looking for {0}, at index number {1}".format(search, found))
-        print("INDEX: {0}\t{1:10}\t{2:10}\t{3:12}".format(found, lname[found], fname[found], birth[found]))
-
-    else:
-        print("\n\tYour search for {0} was NOT FOUND.".format(search))
-
-    #print("SEARCH COUNT: {0}".format(search_count))
-
-   # search_count = 0
-
-    answer = input("Would you like to do another search? [y/n]: ")
-
-
-    while (min < max and search != lname[guess]):
-
     
-    
-        binary_loop += 1 
+    binary_loop += 1 
 
-        if search < lname[guess]:
+    if search < lname[guess]:
 
-            max = guess - 1
+        max = guess - 1
 
-        else: 
+    else: 
             
-            min = guess + 1
+        min = guess + 1
         
-        guess = int((min + max) / 2)
+    guess = int((min + max) / 2)
 
-    if search == lname[guess]:
+if search == lname[guess]:
 
-        print(search, " name was FOUND at index: ", guess)
-        #print entire record of searched item's info
-        print("\t\t\t{1:10} \t {2:10} \t {3:10} \t {4:10}".format(guess, lname[guess], fname[guess], birth[guess]))
+    print(search, " name was FOUND at index: ", guess)
+    print("\t\t\t{1:10} \t {2:10} \t {3:10} \t {4:10}".format(guess, lname[guess], fname[guess], birth[guess]))
     
-    else: #min became larger max, searched through list and did not find
+else:
     
-        print("Your search for ", search, " has NOT BEEN FOUND.")
-        print("cHeCk YoUr SpElLiNg and try again!")
+    print("Your search for ", search, " has NOT BEEN FOUND.")
+    print("cHeCk YoUr SpElLiNg and try again!")
 
 print("\n\nBINARY SEARCH LOOPS: ", binary_loop)
+answer = input("Would you like to do another search? [y/n]: ")
