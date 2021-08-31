@@ -26,12 +26,9 @@ fname = []
 birth = []
 
 records = 0
-binary_loop = 0
-min = 0
-max = records - 1
-guess = int((min + max) / 2)
+search_count = 0
 
-with open("Lab6/lab6A.txt") as csvfile:
+with open("Lab5/lab5_updated.txt") as csvfile:
     file = csv.reader(csvfile)
 
     for rec in file:
@@ -50,31 +47,71 @@ for i in range(0, records):
 print("\n\n\n")
 
 answer = "y"
-while (min < max and search != lname[guess]):
+
+while answer == "y" or answer == "Y":
+
+    found = -1
 
     search = input("Enter the full last name of the person you are looking for: ")
-    
-    binary_loop += 1 
 
-    if search < lname[guess]:
+    for i in range(0, records):
+        search_count += 1
+
+        if search == lname[i]:
+            found = i
+
+    print("\t\tSEARCH HAS COMPLETED.\n\n")
+
+    if found >= 0:
+
+        print("We have found who you are looking for {0}, at index number {1}".format(search, found))
+        print("INDEX: {0}\t{1:10}\t{2:10}\t{3:12}".format(found, lname[found], fname[found], birth[found]))
+
+    else:
+        print("\n\tYour search for {0} was NOT FOUND.".format(search))
+
+    print("SEARCH COUNT: {0}".format(search_count))
+
+    search_count = 0
+
+    answer = input("Would you like to do another search? [y/n]: ")
+
+
+           
+
+binary_loop = 0 
+
+min = 0 
+
+max = records - 1 
+
+guess = int((min + max) / 2) 
+while (min < max and search != lname[guess]):
+    
+    binary_loop += 1
+
+    if search < lname[guess]: 
 
         max = guess - 1
+        
+
 
     else: 
-            
+
         min = guess + 1
-        
+       
     guess = int((min + max) / 2)
+    
 
 if search == lname[guess]:
 
     print(search, " name was FOUND at index: ", guess)
-    print("\t\t\t{1:10} \t {2:10} \t {3:10} \t {4:10}".format(guess, lname[guess], fname[guess], birth[guess]))
     
-else:
+    print("\t\t\t{1:10} \t {2:10} \t {3:10}".format(guess, lname[guess], fname[guess], birth[guess]))
+    
+else: 
     
     print("Your search for ", search, " has NOT BEEN FOUND.")
     print("cHeCk YoUr SpElLiNg and try again!")
 
 print("\n\nBINARY SEARCH LOOPS: ", binary_loop)
-answer = input("Would you like to do another search? [y/n]: ")
