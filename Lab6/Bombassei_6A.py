@@ -79,39 +79,39 @@ while answer == "y" or answer == "Y":
 
            
 
-binary_loop = 0 
+    binary_loop = 0 
 
-min = 0 
+    min = 0 
 
-max = records - 1 
+    max = records - 1 
 
-guess = int((min + max) / 2) 
-while (min < max and search != lname[guess]):
+    guess = int((min + max) / 2) 
+    while (min < max and search != lname[guess]):
     
-    binary_loop += 1
+        binary_loop += 1
 
-    if search < lname[guess]: 
+        if search < lname[guess]: 
 
-        max = guess - 1
+            max = guess - 1
         
 
 
-    else: 
+        else: 
 
-        min = guess + 1
+            min = guess + 1
        
-    guess = int((min + max) / 2)
+        guess = int((min + max) / 2)
     
 
-if search == lname[guess]:
+    if search == lname[guess]:
 
-    print(search, " name was FOUND at index: ", guess)
+        print(search, " name was FOUND at index: ", guess)
     
-    print("\t\t\t{1:10} \t {2:10} \t {3:10}".format(guess, lname[guess], fname[guess], birth[guess]))
+        print("\t\t\t{1:10} \t {2:10} \t {3:10}".format(guess, lname[guess], fname[guess], birth[guess]))
     
-else: 
+    else: 
     
-    print("Your search for ", search, " has NOT BEEN FOUND.")
-    print("cHeCk YoUr SpElLiNg and try again!")
+        print("Your search for ", search, " has NOT BEEN FOUND.")
+        print("cHeCk YoUr SpElLiNg and try again!")
 
-print("\n\nBINARY SEARCH LOOPS: ", binary_loop)
+    print("\n\nBINARY SEARCH LOOPS: ", binary_loop)
