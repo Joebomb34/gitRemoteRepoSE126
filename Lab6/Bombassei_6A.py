@@ -3,7 +3,7 @@
 #Lab 6A
 #8/31/21
 
-#Program Prompt: Store data to a list, prompt the user to enter the full lastname of the person they are searching for, and print the number of records the program went through before finding or not finding the file, reset the search count before entering the loop again, if the search was not found display that, if person was found display the full record of that person.
+#Program Prompt: Store data to a list, prompt the user to enter the full lastname of the person they are searching for, and print the number of records the program went through before finding or not finding the file, reset the search count before entering the loop again, if the search was not found display that, if person was found display the full record of that person. Use Binary search in conjunction with sequential to run afterward.
 
 #Variable Dictionary:
 #lname - list lastname
@@ -64,20 +64,17 @@ while answer == "y" or answer == "Y":
 
     if found >= 0:
 
-        print("We have found who you are looking for {0}, at index number {1}".format(search, found))
+        print("\nWe have found who you are looking for {0}, at index number {1}".format(search, found))
+        print("\n {0}\t\t{1:10}\t{2:10}\t{3:12}".format("INDEX", "Lastname", "Firstname", "Birthday"))
         print("INDEX: {0}\t{1:10}\t{2:10}\t{3:12}".format(found, lname[found], fname[found], birth[found]))
 
     else:
         print("\n\tYour search for {0} was NOT FOUND.".format(search))
 
-    print("SEARCH COUNT: {0}".format(search_count))
+    print("\nSEARCH COUNT: {0}\n".format(search_count))
 
     search_count = 0
 
-    answer = input("Would you like to do another search? [y/n]: ")
-
-
-           
 
     binary_loop = 0 
 
@@ -106,12 +103,14 @@ while answer == "y" or answer == "Y":
     if search == lname[guess]:
 
         print(search, " name was FOUND at index: ", guess)
-    
-        print("\t\t\t{1:10} \t {2:10} \t {3:10}".format(guess, lname[guess], fname[guess], birth[guess]))
+        print(" {0}\t\t{1:10}\t{2:10}\t{3:12}".format("INDEX", "Lastname", "Firstname", "Birthday"))
+        print(" {0}\t\t{1:10} \t {2:10} \t {3:10}".format(guess, lname[guess], fname[guess], birth[guess]))
     
     else: 
     
         print("Your search for ", search, " has NOT BEEN FOUND.")
         print("cHeCk YoUr SpElLiNg and try again!")
 
-    print("\n\nBINARY SEARCH LOOPS: ", binary_loop)
+    print("\nBINARY SEARCH LOOPS: ", binary_loop)
+
+    answer = input("\nWould you like to do another search? [y/n]: ")
