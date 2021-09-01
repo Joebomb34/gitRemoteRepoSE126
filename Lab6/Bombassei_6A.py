@@ -3,7 +3,7 @@
 #Lab 6A
 #8/31/21
 
-#Program Prompt: Store data to a list, prompt the user to enter the full lastname of the person they are searching for, and print the number of records the program went through before finding or not finding the file, reset the search count before entering the loop again, if the search was not found display that, if person was found display the full record of that person. Use Binary search in conjunction with sequential to run afterward.
+#Program Prompt: Store data to a list, prompt the user to enter the full lastname of the person they are searching for, and print the number of records the program went through before finding or not finding the file, reset the search count before entering the loop again, if the search was not found display that, if person was found display the full record of that person. Use Binary search to run afterward.
 
 #Variable Dictionary:
 #lname - list lastname
@@ -15,6 +15,11 @@
 #file - lab5_updated.txt after csv reader
 #answer - answer to enter loop
 #found - hold the search for location of data if the search has completed successfully and the item is found
+#binary_loop - binary loop count for how many iterations of the binary loop it took to find a search
+#min - minimum number of records
+#max - maximum nuber of records
+#guess - mid point to check value
+#search - who the user is searching for
 
 
 #--MAIN CODE--

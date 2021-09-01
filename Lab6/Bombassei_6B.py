@@ -3,25 +3,39 @@
 #Lab 6B
 #9/1/21
 
-#PROGRAM PROMPT:
+#PROGRAM PROMPT: Take user inputs to assign seats of passengers to a flight. Display the taken seats with an "X" and if the seat has already been taken do not allow them to be taken again.
 
 #VARIABLE DICTIONARY:
+#sit() - function to ask what row the user wants to sit in
+#row - input of a number
+#row_ - list to append to keep a list of user selections
+#ss() - function for user to input which seat they would like
+#seat - input of seat letter
+#seat_ - list to append and keep track of what user has selected
+#state() - statement of running list to see "X" in seats already chosen
+#cont() - function for asking user if they would like to re-enter the loop
+#answer - keep loop in otion
+#seatA, seatB, seatC, seatD - man made list for rows
+#i - index
+
 
 def sit():
     row = int(input("What row would you like to sit in?: "))
     while row != 1 and row != 2 and row != 3 and row != 4 and row != 5 and row != 6 and row != 7:
-        row = input("Invalid Option. Select an option 1 - 7: ")
-    row -= 1
+        row = int(input("\nInvalid Option. Select an option 1 - 7: "))
 
-    
+    row_.append(row)
+    row -= 1
 
     return row
 
 def ss():
-    seat = input("What seat would you like?: ")
+    seat = input("What seat would you like?: ").upper()
 
     while seat != "A" and seat != "B" and seat != "C" and seat != "D":
-        seat = input("Invalid Option. Select an option A - D: ")
+        seat = input("\nInvalid Option. Select an option A - D: ").upper()
+    
+    seat_.append(seat)
 
     return seat
 
@@ -31,7 +45,7 @@ def state():
 
 def cont():
     
-    answer = input("Would you like to choose another seat? [y/n]: ").lower()
+    answer = input("\nWould you like to choose another seat? [y/n]: ").lower()
 
     return answer
 
@@ -55,37 +69,45 @@ while answer == "y":
     seat = ss()
 
     if seat == "A": 
-        seatA[row] = "X"
-        state()
-        
+        if seatA[row] == "X":
+            print("Seat is taken.")
+        else:
+            seatA[row] = "X"
+            state()
+    
     elif seat == "B":
         seatB[row] = "X"
         state()
+        if seatB[row] == "X":
+            print("Seat is taken.")
 
     elif seat == "C":
-        seatC[row] = "X"
-        state()
+        if seatC[row] == "X":
+            print("Seat is taken.")
+        else:
+            seatC[row] = "X"
+            state()
 
     elif seat == "D":
-        seatD[row] = "X"
-        state()
-
-    
-    
+        if seatD[row] == "X":
+            print("Seat is taken.")
+        else:
+            seatD[row] = "X"
+            state()
+        
     
     answer = cont()
-
-   
+        
 
     while answer != "y" and answer != "n":    
         print("***INVALID OPTION***")
 
-        answer = input("Would you like to choose another seat? [y/n]: ").lower()
+        answer = input("\nWould you like to choose another seat? [y/n]: ").lower()
 
     if answer == "n":
         row += 1
-        row_.append(row)
-        seat_.append(seat)
+
+        print("\nThese are your selected seats: ")
+        
         for i in range(0, len(row_)):
-            print("These are your selected seats:")
-            print("{0}".format(row_[i]))
+            print(row_[i], seat_[i])  
