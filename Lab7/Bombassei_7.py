@@ -227,16 +227,16 @@ while answer == "y" or answer == "Y":
             
             if search == lname[i]:
                 found = i
-            if found >= 0:
-                print("INDEX: {0}\t{1:15}\t{2:15}\t{3:12}\t{4:3}\t{5:35}".format(found, idCode[found], lname[found], fname[found], age[found], allegiance[found]))
+                if found >= 0:
+                    print("INDEX: {0}\t{1:15}\t{2:15}\t{3:12}\t{4:3}\t{5:35}".format(found, idCode[found], lname[found], fname[found], age[found], allegiance[found]))
                 #print("\nWe have found who you are looking for {0}, at index number {1}".format(search, found))
 
         
             
             
 
-            else:
-                print("\n\tYour search for {0} was NOT FOUND.".format(search))
+                else:
+                    print("\n\tYour search for {0} was NOT FOUND.".format(search))
 
 
     elif choice == "4":
