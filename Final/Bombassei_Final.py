@@ -3,7 +3,7 @@
 #Final
 #9/13/21
 
-#Program Prompt: List out people's first and last name, age, residence, or last name and residence, show the amount of people old enough to rent a car (print last name and yes or no, based on the age 25 or older), show people who will and won't need a co-signer for a rent (print last name and co signer yes or no) or exit based in a menu
+#Program Prompt: List out people's first and last name, age, residence, or last name and residence, show the amount of people old enough to rent a car (print last name and yes or no, based on the age 25 or older), show people who will and won't need a co-signer for a rent (print last name and co signer yes or no), use binary search by last name, search sequentially for residency, or exit based in a menu.
 
 #Variable Dictionary:
 #records - number of records processed
@@ -11,7 +11,7 @@
 #lname - lastname as it appears in list
 #age - age or person
 #residence - town which person live
-#csvfile - midterm.txt
+#csvfile - final.txt
 #file - csvfile after reader
 #income - yearly income
 #rent_car - rent car list
@@ -30,6 +30,13 @@
 #age1_list - list of ages as determined by rec[5] year
 #age_1 - ages after rec[5] is subtracted from the current year
 #current_time.year - current year in GMT as program default
+#swap() - used to swap all the values associated with one index when searched so it displays properly
+#reenter() - used to ask the user if they want to re-enter the loop
+#min - used to identify the minimum value for binary search
+#max - used to identify the maximum value for binary search
+#search - used to ask the user who or what they want to search for
+#guess - the programs guess during binary search to find the appopriate list item searched
+#i - index
 
 #Function---
 def menu():
