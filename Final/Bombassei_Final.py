@@ -245,7 +245,7 @@ while answer == "y".lower():
                     swap(income, index)
                     swap(year, index)
 
-        search = input("Enter the full LAST NAME of the person you are looking for: ")
+        search = input("Enter the full LAST NAME of the person you are looking for: ").title()
 
         min = 0 
 
@@ -276,12 +276,12 @@ while answer == "y".lower():
         else: 
     
             print("Your search for {0} has NOT BEEN FOUND.".format(search))
-            print("Check your spelling, first letter must be capatilized!")
+            print("Check your spelling!")
 
     elif user == "9":
         found = -1
 
-        search = input("Enter the RESIDENCE of the person you are looking for: ")
+        search = input("Enter the RESIDENCE of the person you are looking for: ").title()
 
         print("-----------------------------------------------------------------------------------------------")
         print("{0:10}\t{1:10}\t{2:3}\t{3:16}\t {4:6}\t\t{5:5}".format("FIRST", "LAST", "AGE", "RESIDENCE", "INCOME", "Birth Year"))
@@ -297,7 +297,7 @@ while answer == "y".lower():
 
                 else:
                     print("\n\tYour search for residence {0} was NOT FOUND.".format(search))
-                    print("Check your spelling, first letter must be capatilized!")
+                    print("Check your spelling!")
 
     elif user == "10":
         print("\t\tE X I T I N G . . .")
